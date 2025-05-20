@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qsy344lyj-nodejs-gitops
+  description: This is GitOps manifest for qsy344lyj-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=qsy344lyj-nodejs
+    backstage.io/kubernetes-id: qsy344lyj-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qsy344lyj-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qsy344lyj-nodejs
